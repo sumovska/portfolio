@@ -5,7 +5,7 @@
 /* ==========================================================================
    _FONTS
    ========================================================================== */
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,cyrillic);
 /* ==========================================================================
    _GENERAL STYLES
    ========================================================================== */
@@ -21,7 +21,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font: 14px/20px 'Roboto Slab', serif;
+  font: 14px/20px 'Open Sans', sans-serif;
   color: #333;
   background: #fff;
   -webkit-font-smoothing: antialiased;
@@ -31,6 +31,8 @@ body {
   width: 100%;
   min-width: 320px;
   min-height: 100%;
+  margin: 0;
+  padding-bottom: 90px;
   background: #fff;
   position: relative;
 }
@@ -198,9 +200,9 @@ h6 {
 /* Wrapper */
 .wrapper {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 .wrapper:after {
   display: table;
@@ -210,3 +212,115 @@ h6 {
 /* ==========================================================================
    _HEADER
    ========================================================================== */
+.header {
+  height: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  cursor: default;
+}
+.header > .wrapper {
+  height: 100%;
+  position: relative;
+}
+.header .logo {
+  margin: 0;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.header .nav {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.header .nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  line-height: 20px;
+}
+.header .nav ul li {
+  display: inline-block;
+}
+.header .nav ul li a {
+  padding: 0 15px;
+  display: block;
+  /*.color-white(.7);
+          color: @color;*/
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* ==========================================================================
+   _FOOTER
+   ========================================================================== */
+.footer {
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: default;
+}
+.footer > .wrapper {
+  height: 100%;
+  position: relative;
+}
+.footer .copyright {
+  margin: 0;
+  font-weight: bold;
+  position: absolute;
+  left: 15px;
+  top: 35px;
+}
+.footer .links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  top: 35px;
+}
+.footer .links li {
+  display: inline-block;
+}
+.footer .links li a {
+  padding: 0 5px;
+  display: block;
+}
+.footer .social {
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  top: 35px;
+}
+.footer .social li {
+  padding: 0 5px;
+  display: inline-block;
+}
+.footer .social li a {
+  width: 40px;
+  height: 40px;
+  padding: 10px 0;
+  display: block;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+.footer .social li a:hover {
+  background-color: #f05f40;
+}

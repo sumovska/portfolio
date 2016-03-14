@@ -7,14 +7,14 @@
 // _VARIABLES
 // ==========================================================================
 @min-width: 320px;
-@md-width: 1170px;
+@md-width: 1200px;
 
 @xs: ~"(min-width: 400px)";
 @sm: ~"(min-width: 750px)";
 @md: ~"(min-width: 1000px)";
 @lg: ~"(min-width: 1024px)";
 
-@font-family: 'Roboto Slab', serif;
+@font-family: 'Open Sans', sans-serif;
 
 @color-black: #000;
 @color-white: #fff;
@@ -70,7 +70,7 @@
 /* ==========================================================================
    _FONTS
    ========================================================================== */
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,cyrillic);
 /* ==========================================================================
    _GENERAL STYLES
    ========================================================================== */
@@ -96,6 +96,8 @@ body {
   width: 100%;
   min-width: @min-width;
   min-height: 100%;
+  margin: 0;
+  padding-bottom: 90px;
   background: @color-white;
   position: relative;
 }
@@ -220,9 +222,131 @@ h6 {&:extend(.h6); }
   width: 100%;
   max-width: @md-width;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
   &:after { .clearfix; }
 }
 /* ==========================================================================
    _HEADER
    ========================================================================== */
+.header {
+  height: 50px;
+  .color-white(.7);
+  border-bottom: 1px solid @color;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  cursor: default;
+
+  > .wrapper { height: 100%; position: relative; }
+
+  .logo {
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  .nav {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 13px;
+      line-height: 20px;
+
+      li {
+        display: inline-block;
+
+        a {
+          padding: 0 15px;
+          display: block;
+          /*.color-white(.7);
+          color: @color;*/
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+/* ==========================================================================
+   _FOOTER
+   ========================================================================== */
+.footer {
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: default;
+
+  > .wrapper { height: 100%; position: relative; }
+
+  .copyright {
+    margin: 0;
+    font-weight: bold;
+    position: absolute;
+    left: 15px;
+    top: 35px;
+  }
+
+  .links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 35px;
+
+    li {
+      display: inline-block;
+
+      a {
+        padding: 0 5px;
+        display: block;
+      }
+    }
+  }
+
+  .social {
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+    top: 35px;
+
+    li {
+      padding: 0 5px;
+      display: inline-block;
+
+      a {
+        width: 40px;
+        height: 40px;
+        padding: 10px 0;
+        display: block;
+        text-align: center;
+        color: @color-white;
+        background: @color-black;
+        border-radius: 50%;
+        transition: background-color @duration;
+
+        &:hover {
+          background-color: @color-orange;
+        }
+      }
+    }
+  }
+}
