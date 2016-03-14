@@ -1,0 +1,228 @@
+/*
+ * Project: Portfolio
+ * File: Main styles
+ */
+
+// ==========================================================================
+// _VARIABLES
+// ==========================================================================
+@min-width: 320px;
+@md-width: 1170px;
+
+@xs: ~"(min-width: 400px)";
+@sm: ~"(min-width: 750px)";
+@md: ~"(min-width: 1000px)";
+@lg: ~"(min-width: 1024px)";
+
+@font-family: 'Roboto Slab', serif;
+
+@color-black: #000;
+@color-white: #fff;
+@color-font: #333;
+@color-orange: #f05f40;
+
+@margin-sm: 16px;
+@margin-md: 20px;
+
+@duration: .2s;
+@images: '../img';
+
+// ==========================================================================
+// _MIXINS
+// ========================================================================== */
+// COLORS
+.color-white(@opacity) { @color: rgba(255, 255, 255, @opacity); }
+.color-black(@opacity) { @color: rgba(0, 0, 0, @opacity); }
+// ROTATE
+.rotate(@deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+  transform: rotate(@deg);
+  -webkit-backface-visibility: hidden;
+}
+// SCALE
+.scale(@rate) {
+  -webkit-transform: scale(@rate);
+  -moz-transform: scale(@rate);
+  -ms-transform: scale(@rate);
+  -o-transform: scale(@rate);
+  transform: scale(@rate);
+  -webkit-backface-visibility: hidden;
+}
+// TRANSITION TRANSLATE
+.transition-translate(@delay) {
+  -webkit-transition: -webkit-transform @delay;
+  -moz-transition: -moz-transform @delay;
+  -ms-transition: -ms-transform @delay;
+  -o-transition: -o-transform @delay;
+  transition: transform @delay;
+}
+// TRANSITION TRANSLATE OPACITY
+.transition-translate-opacity(@duration) {
+  -webkit-transition: -webkit-transform @duration, opacity @duration;
+  -moz-transition: -moz-transform @duration, opacity @duration;
+  -ms-transition: -ms-transform @duration, opacity @duration;
+  -o-transition: -o-transform @duration, opacity @duration;
+  transition: transform @duration, opacity @duration;
+}
+/* ==========================================================================
+   _FONTS
+   ========================================================================== */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300&subset=latin,cyrillic);
+/* ==========================================================================
+   _GENERAL STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font: 14px/20px @font-family;
+  color: @color-font;
+  background: @color-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  width: 100%;
+  min-width: @min-width;
+  min-height: 100%;
+  background: @color-white;
+  position: relative;
+}
+/* ==========================================================================
+   _TEXT STYLES
+   ========================================================================== */
+p {
+  margin: 0 0 @margin-sm;
+  @media @md {
+    margin: 0 0 @margin-md;
+  }
+}
+ul, ol {
+  padding: 0 0 0 @margin-sm;
+  margin: 0 0 @margin-sm;
+  @media @md {
+    margin: 0 0 @margin-md;
+  }
+}
+:focus { outline: -webkit-focus-ring-color auto 0; }
+a {
+  color: @color-orange;
+  outline: none;
+  text-decoration: none;
+  transition: color @duration;
+  &:hover, &:focus { outline: none; text-decoration: underline; }
+}
+audio, canvas, img, video { vertical-align: middle; }
+/* ==========================================================================
+   _HEADINGS
+   ========================================================================== */
+.heading-default {
+  margin: 0;
+  line-height: normal;
+  font-weight: bold;
+  color: @color-font;
+}
+.h1 {
+  &:extend(.heading-default);
+  margin: @margin-sm 0 @margin-sm;
+  font-size: 24px;
+  font-style: normal;
+
+  @media @md {
+    font-size: 30px;
+    margin: @margin-md 0 @margin-md;
+  }
+
+}
+.h2 {
+  &:extend(.heading-default);
+  margin: @margin-sm 0 @margin-sm;
+  font-size: 22px;
+  font-style: normal;
+
+  @media @md {
+    font-size: 24px;
+    margin: @margin-md 0 @margin-md;
+  }
+}
+.h3 {
+  &:extend(.heading-default);
+  margin: @margin-sm 0 @margin-sm;
+  font-size: 20px;
+  font-style: normal;
+
+  @media @md {
+    font-size: 22px;
+    margin: @margin-md 0 @margin-md;
+  }
+}
+.h4 {
+  &:extend(.heading-default);
+  margin: @margin-sm 0 @margin-sm;
+  font-size: 18px;
+  font-style: normal;
+
+  @media @md {
+    font-size: 20px;
+    margin: @margin-md 0 @margin-md;
+  }
+
+}
+.h5 {
+  &:extend(.heading-default);
+  margin: @margin-sm 0 @margin-sm;
+  font-size: 16px;
+  font-style: normal;
+
+  @media @md {
+    font-size: 18px;
+    margin: @margin-md 0 @margin-md;
+  }
+
+}
+.h6 {
+  &:extend(.heading-default);
+  margin: @margin-sm 0 @margin-sm;
+  font-size: 14px;
+  font-style: normal;
+
+  @media @md {
+    font-size: 15px;
+    margin: @margin-md 0 @margin-md;
+  }
+
+}
+h1 {&:extend(.h1); }
+h2 {&:extend(.h2); }
+h3 {&:extend(.h3); }
+h4 {&:extend(.h4); }
+h5 {&:extend(.h5); }
+h6 {&:extend(.h6); }
+/* ==========================================================================
+   _CONTAINERS
+   ========================================================================== */
+.clearfix { display: table; content: '\0020'; clear: both; }
+.before { display: block; content: '\0020'; overflow: hidden; }
+.unselectable { -webkit-user-select: none; -moz-user-select: -moz-none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+/* Wrapper */
+.wrapper {
+  width: 100%;
+  max-width: @md-width;
+  margin: 0 auto;
+  padding: 0 10px;
+  &:after { .clearfix; }
+}
+/* ==========================================================================
+   _HEADER
+   ========================================================================== */
